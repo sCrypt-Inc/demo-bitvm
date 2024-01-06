@@ -36,21 +36,21 @@ export class DemoBitVM extends SmartContract {
         preimageB: ByteString,
         preimageE: ByteString
     ) {
-        const bitA = this.bitValueCommit(this.hashPairA, preimageA)
-        const bitB = this.bitValueCommit(this.hashPairB, preimageB)
-        const bitE = this.bitValueCommit(this.hashPairE, preimageE)
-        assert(this.nand(bitA, bitB) == bitE)
+        const bitA = DemoBitVM.bitValueCommit(this.hashPairA, preimageA)
+        const bitB = DemoBitVM.bitValueCommit(this.hashPairB, preimageB)
+        const bitE = DemoBitVM.bitValueCommit(this.hashPairE, preimageE)
+        assert(DemoBitVM.nand(bitA, bitB) == bitE)
     }
 
     @method()
-    bitValueCommit(hashPair: HashPair, preimage: ByteString): boolean {
+    static bitValueCommit(hashPair: HashPair, preimage: ByteString): boolean {
         const h = hash160(preimage)
         assert(h == hashPair.hash0 || h == hashPair.hash1)
         return h == hashPair.hash1
     }
 
     @method()
-    nand(A: boolean, B: boolean): boolean {
+    static nand(A: boolean, B: boolean): boolean {
         return !(A && B)
     }
 }
