@@ -6,13 +6,13 @@
 npm run build
 ```
 
-## Testing Locally
+## Test Locally
 
 ```sh
 npm run test
 ```
 
-## Run Tests on the Bitcoin Testnet
+## Run Tests on the BTC Testnet
 
 ```sh
 npm run test:testnet
