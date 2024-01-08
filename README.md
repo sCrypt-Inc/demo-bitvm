@@ -1,4 +1,4 @@
-# Btc Demo
+# sCrypt Smart Contracts on BTC Demo
 
 ## Build
 
